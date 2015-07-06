@@ -17,7 +17,12 @@
 <template name="mfAdminCollectionsEdit">
   <div class="box box-default">
     <div class="box-body">
-      {{> quickForm id="mfAdmin_update" collection=collection type="update" doc=doc}}
+      {{> quickForm
+        id="mfAdmin_update"
+        collection=collection
+        type="update"
+        doc=doc
+        _successPath=successPath}}
     </div>
   </div>
 </template>

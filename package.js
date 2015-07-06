@@ -48,6 +48,7 @@ Package.onUse(function(api) {
     'client/breadcrumb/breadcrumb.js',
     'client/helpers.js',
     'client/defaults.js',
+    'client/autoform.js',
     'client/style.css'
   ], 'client');
 
