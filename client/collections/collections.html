@@ -1,15 +1,19 @@
 <template name="mfAdminCollectionsView">
-  {{#if hasDocuments}}
-    <div class="box box-default">
-      <div class="box-body">
-        {{> tabular table=table class="table dataTable"}}
+  {{#if Template.subscriptionsReady}}
+    {{#if hasDocuments}}
+      <div class="box box-default">
+        <div class="box-body">
+          {{> tabular table=table class="table dataTable"}}
+        </div>
       </div>
-    </div>
+    {{else}}
+      <div class="alert alert-info">
+        <p>There are no visible items in this collection.</p>
+        <p><a href="{{newPath}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
+      </div>
+    {{/if}}
   {{else}}
-    <div class="alert alert-info">
-      <p>There are no visible items in this collection.</p>
-      <p><a href="{{newPath}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
-    </div>
+    <span>Loading...</span>
   {{/if}}
 </template>
 
