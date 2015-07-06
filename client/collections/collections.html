@@ -9,7 +9,15 @@
 <template name="mfAdminCollectionsNew">
   <div class="box box-default">
     <div class="box-body">
-      {{> quickForm id="mfAdmin-insert" collection=collection type="insert"}}
+      {{> quickForm id="mfAdmin_insert" collection=collection type="insert"}}
+    </div>
+  </div>
+</template>
+
+<template name="mfAdminCollectionsEdit">
+  <div class="box box-default">
+    <div class="box-body">
+      {{> quickForm id="mfAdmin_update" collection=collection type="update" doc=doc}}
     </div>
   </div>
 </template>
@@ -33,4 +41,9 @@
       </div>
     {{/each}}
   </div>
+</template>
+
+<template name="mfAdminCollectionsEditBtn">
+  <a href="{{path}}" class="hidden-xs btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a>
+  <a href="{{path}}" class="visible-xs btn btn-sm btn-primary"><i class="fa fa-pencil"></i> Edit</a>
 </template>
