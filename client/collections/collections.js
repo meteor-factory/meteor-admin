@@ -11,6 +11,16 @@ Template.mfAdminCollectionsWidgets.onCreated(function () {
   });
 });
 
+Template.mfAdminCollectionsView.onCreated(function () {
+  this.subscribe(this.data.countPubName);
+});
+
+Template.mfAdminCollectionsView.helpers({
+  hasDocuments: function () {
+    return Counts.get(this.countPubName) > 0;
+  }
+});
+
 Template.mfAdminCollectionsView.events({
   // This callback should be attached to mfAdminCollectionsDeleteBtn template
   // but for some reason templates rendered with Blaze.renderWithData are not
