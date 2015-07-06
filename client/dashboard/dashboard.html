@@ -1,0 +1,7 @@
+<template name="mfAdminDashboard">
+  {{#each items}}
+    {{#if template}}
+      {{> Template.dynamic template=template}}
+    {{/if}}
+  {{/each}}
+</template>

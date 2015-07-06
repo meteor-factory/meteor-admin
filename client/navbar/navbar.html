@@ -1,0 +1,50 @@
+<template name="mfAdminNavbar">
+  <nav class="navbar navbar-static-top">
+    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </a>
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        {{> mfAdminNavbarItems}}
+      </ul>
+    </div>
+  </nav>
+</template>
+
+<template name="mfAdminNavbarItems">
+  {{#each items this}}
+    {{#if hasSubItems this}}
+      {{> mfAdminNavbarDropdown}}
+    {{else}}
+      {{> mfAdminNavbarItem}}
+    {{/if}}
+  {{/each}}
+</template>
+
+<template name="mfAdminNavbarItem">
+  <li>
+    {{#if template}}
+      {{> Template.dynamic template=template data=this}}
+    {{else}}
+      <a href="{{href}}">{{label}}</a>
+    {{/if}}
+  </li>
+</template>
+
+<template name="mfAdminNavbarDropdown">
+  <li class="dropdown">
+    {{#if template}}
+      {{> Template.dynamic template=template data=this}}
+    {{else}}
+      <a href="{{href}}" class="dropdown-toggle" data-toggle="dropdown">
+        {{label}}
+      </a>
+      <ul class="dropdown-menu">
+        {{> mfAdminNavbarItems}}
+      </ul>
+    {{/if}}
+  </li>
+</template>

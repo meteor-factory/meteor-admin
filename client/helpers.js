@@ -1,0 +1,1 @@
+Template.registerHelper('Admin', Admin);

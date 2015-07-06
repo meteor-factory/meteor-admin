@@ -1,0 +1,24 @@
+<template name="mfAdminBreadcrumb">
+  <ol class="breadcrumb">
+    <li>
+      <a href="{{Admin.path ''}}">Dashboard</a>
+    </li>
+    {{#each breadcrumb}}
+      <li class="{{#if isActive}}active{{/if}}">
+        {{#if url}}
+          <a href="{{url}}">
+            {{#if icon}}
+              <i class="fa fa-{{icon}}"></i>
+            {{/if}}
+            {{label}}
+          </a>
+        {{else}}
+          {{#if icon}}
+            <i class="fa fa-{{icon}}"></i>
+          {{/if}}
+          {{label}}
+        {{/if}}
+      </li>
+    {{/each}}
+  </ol>
+</template>

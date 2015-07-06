@@ -1,0 +1,36 @@
+<template name="mfAdminCollectionsView">
+  <div class="box box-default">
+    <div class="box-body">
+      {{> tabular table=table class="table dataTable"}}
+    </div>
+  </div>
+</template>
+
+<template name="mfAdminCollectionsNew">
+  <div class="box box-default">
+    <div class="box-body">
+      {{> quickForm id="mfAdmin-insert" collection=collection type="insert"}}
+    </div>
+  </div>
+</template>
+
+<template name="mfAdminCollectionsWidgets">
+  <div class="row">
+    {{#each Admin.collections.get}}
+      <div class="col-lg-3 col-xs-6">
+        <a href="{{viewPath}}" class="small-box bg-blue">
+          <div class="inner">
+            <h3>{{getPublishedCount countPubName}}</h3>
+            <p>{{name}}</p>
+          </div>
+          <div class="icon">
+            <i class="fa fa-plus"></i>
+          </div>
+          <a href="{{viewPath}}" class="small-box-footer">
+            View all
+          </a>
+        </a>
+      </div>
+    {{/each}}
+  </div>
+</template>

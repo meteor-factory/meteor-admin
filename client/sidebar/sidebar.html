@@ -1,0 +1,53 @@
+<template name="mfAdminSidebar">
+  <aside class="main-sidebar">
+    <div class="sidebar">
+      <ul class="sidebar-menu">
+        {{> mfAdminSidebarItems}}
+      </ul>
+    </div>
+  </aside>
+</template>
+
+<template name="mfAdminSidebarItems">
+  {{#each items this}}
+    {{#if hasSubItems this}}
+      {{> mfAdminSidebarTreeview}}
+    {{else}}
+      {{> mfAdminSidebarItem}}
+    {{/if}}
+  {{/each}}
+</template>
+
+<template name="mfAdminSidebarItem">
+  <li>
+    {{#if template}}
+      {{> Template.dynamic template=template data=this}}
+    {{else}}
+      <a href="{{href}}">
+        {{#if icon}}
+          <i class="fa fa-{{icon}}"></i>
+        {{/if}}
+        <span>{{label}}</span>
+      </a>
+    {{/if}}
+  </li>
+</template>
+
+<template name="mfAdminSidebarTreeview">
+  <li class="treeview">
+    <a href="{{href}}">
+      {{#if template}}
+        {{> Template.dynamic template=template data=this}}
+      {{else}}
+        {{#if icon}}
+          <i class="fa fa-{{icon}}"></i>
+        {{/if}}
+        <i class="fa fa-angle-left pull-right"></i>
+        <span>{{label}}</span>
+      {{/if}}
+    </a>
+    <ul class="treeview-menu">
+      {{> mfAdminSidebarItems}}
+    </ul>
+  </li>
+</template>
