@@ -18,8 +18,16 @@ Template.mfAdminLayout.onDestroyed(function () {
 });
 
 Template.mfAdminLayout.helpers({
-  skin: function () {
-    return Admin.config.get('skin');
+  AdminLTE_skin: function () {
+    return Admin.config.get('admin-lte-skin');
+  },
+
+  AdminLTE_fixed: function () {
+    return Admin.config.get('admin-lte-fixed');
+  },
+
+  AdminLTE_sidebarMini: function () {
+    return Admin.config.get('admin-lte-sidebar-mini');
   },
 
   minHeight: function () {

@@ -1,5 +1,8 @@
 <template name="mfAdminLayout">
-  {{#AdminLTE skin=skin}}
+  {{#AdminLTE
+    skin=AdminLTE_skin
+    fixed=AdminLTE_fixed
+    sidebarMini=AdminLTE_sidebarMini}}
     {{> mfAdminHeader}}
     {{> mfAdminSidebar}}
     <div class="content-wrapper">
