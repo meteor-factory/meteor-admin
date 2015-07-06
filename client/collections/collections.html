@@ -57,3 +57,28 @@
   <a href="{{path}}" class="hidden-xs btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a>
   <a href="{{path}}" class="visible-xs btn btn-sm btn-primary"><i class="fa fa-pencil"></i> Edit</a>
 </template>
+
+<template name="mfAdminCollectionsDeleteBtn">
+	<a href="#" class="hidden-xs btn btn-xs btn-danger js-delete-doc" data-id="{{_id}}"><i class="fa fa-times"></i></a>
+	<a href="#" class="visible-xs btn btn-sm btn-danger js-delete-doc" data-id="{{_id}}"><i class="fa fa-times"></i> Delete</a>
+</template>
+
+<template name="mfAdminCollectionsDeleteModal">
+  <div class="modal fade" id="admin-delete-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Confirm delete</h4>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete this?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger js-delete">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
