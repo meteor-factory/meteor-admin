@@ -9,7 +9,11 @@
 <template name="mfAdminCollectionsNew">
   <div class="box box-default">
     <div class="box-body">
-      {{> quickForm id="mfAdmin_insert" collection=collection type="insert"}}
+      {{> quickForm
+        id="mfAdmin_insert"
+        collection=collection
+        type="insert"
+        buttonContent="Create"}}
     </div>
   </div>
 </template>
@@ -22,6 +26,7 @@
         collection=collection
         type="update"
         doc=doc
+        buttonContent="Update"
         _successPath=successPath}}
     </div>
   </div>
