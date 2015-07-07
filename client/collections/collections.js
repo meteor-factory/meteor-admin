@@ -11,6 +11,12 @@ Template.mfAdminCollectionsWidgets.onCreated(function () {
   });
 });
 
+Template.mfAdminCollectionsWidgets.helpers({
+  background: function () {
+    return (this.widget && this.widget.color) || 'blue';
+  }
+});
+
 Template.mfAdminCollectionsView.onCreated(function () {
   this.subscribe(this.data.countPubName);
 });

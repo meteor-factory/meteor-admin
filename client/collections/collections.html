@@ -9,7 +9,7 @@
     {{else}}
       <div class="alert alert-info">
         <p>There are no visible items in this collection.</p>
-        <p><a href="{{newPath}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
+        <a href="{{newPath}}" class="btn btn-primary"><i class="fa fa-plus"></i> <span>Add one</span></a>
       </div>
     {{/if}}
   {{else}}
@@ -47,20 +47,22 @@
 <template name="mfAdminCollectionsWidgets">
   <div class="row">
     {{#each Admin.collections.get}}
-      <div class="col-lg-3 col-xs-6">
-        <a href="{{viewPath}}" class="small-box bg-blue">
-          <div class="inner">
-            <h3>{{getPublishedCount countPubName}}</h3>
-            <p>{{name}}</p>
-          </div>
-          <div class="icon">
-            <i class="fa fa-plus"></i>
-          </div>
-          <a href="{{viewPath}}" class="small-box-footer">
-            View all
+      {{#unless widget.hidden}}
+        <div class="col-lg-3 col-xs-6">
+          <a href="{{viewPath}}" class="small-box bg-{{background}}">
+            <div class="inner">
+              <h3>{{getPublishedCount countPubName}}</h3>
+              <p>{{name}}</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-plus"></i>
+            </div>
+            <a href="{{viewPath}}" class="small-box-footer">
+              See all <i class="fa fa-arrow-circle-right"></i>
+            </a>
           </a>
-        </a>
-      </div>
+        </div>
+      {{/unless}}
     {{/each}}
   </div>
 </template>
