@@ -16,11 +16,13 @@
 
 <template name="mfAdminNavbarItems">
   {{#each items this}}
-    {{#if hasSubItems this}}
-      {{> mfAdminNavbarDropdown}}
-    {{else}}
-      {{> mfAdminNavbarItem}}
-    {{/if}}
+    {{#unless hidden}}
+      {{#if hasSubItems this}}
+        {{> mfAdminNavbarDropdown}}
+      {{else}}
+        {{> mfAdminNavbarItem}}
+      {{/if}}
+    {{/unless}}
   {{/each}}
 </template>
 

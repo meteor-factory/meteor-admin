@@ -10,11 +10,13 @@
 
 <template name="mfAdminSidebarItems">
   {{#each items this}}
-    {{#if hasSubItems this}}
-      {{> mfAdminSidebarTreeview}}
-    {{else}}
-      {{> mfAdminSidebarItem}}
-    {{/if}}
+    {{#unless hidden}}
+      {{#if hasSubItems this}}
+        {{> mfAdminSidebarTreeview}}
+      {{else}}
+        {{> mfAdminSidebarItem}}
+      {{/if}}
+    {{/unless}}
   {{/each}}
 </template>
 
