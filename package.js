@@ -22,7 +22,10 @@ Package.onUse(function(api) {
   ]);
 
   api.use([
-    'iron:router@1.0.7'
+    'iron:router@1.0.7',
+    'accounts-ui',
+    'useraccounts:core',
+    'useraccounts:bootstrap'
   ], { weak: true });
 
   api.addFiles([
@@ -33,6 +36,8 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'client/common/tree.js',
+    'client/common/login.html',
+    'client/common/login.js',
     'client/header/header.html',
     'client/layout/layout.html',
     'client/layout/layout.js',
