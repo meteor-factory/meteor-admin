@@ -5,9 +5,9 @@ Meteor Admin
 
 This is the next version of `yogiben:admin`. It features a lot of improvements in the api and AdminLTE theme. Please bear in mind that this is one of the first releases so the api is not set in stone and it also may contain some bugs.
 
-## Sidebar menu ##
+## Sidebar and navbar menus ##
 
-Sidebar menu is designed to work well with your app as well as with other packages. For example `admin-analytics` package may add `Analytics` link to the sidebar:
+Sidebar and navbar menus are designed to work well with your app as well as with other packages. For example `admin-analytics` package may add `Analytics` link to the sidebar:
 
 ```javascript
 Admin.sidebar.set('AdminAnalytics', {
@@ -44,9 +44,21 @@ Admin.sidebar.set('AdminAnalytics.Users', {
 
 This will add an icon next to the label.
 
+API for the navbar menu is same as for sidebar. For example:
+
+```javascript
+Admin.navbar.set('Profile', {
+  path: '/profile'
+});
+```
+
 ### Arguments ###
 
 `Admin.sidebar.set(key, options)`
+
+or
+
+`Admin.navbar.set(key, options)`
 
 - **key** - *string*
 
