@@ -5,6 +5,33 @@ Meteor Admin
 
 This is the next version of `yogiben:admin`. It features a lot of improvements in the api and AdminLTE theme. Please bear in mind that this is one of the first releases so the api is not set in stone and it also may contain some bugs.
 
+## Admin config ##
+
+Admin package can be configured through `Admin.config` variable. It's `ReactiveDict`, so values can be set and get reactively, e.g:
+
+```javascript
+Admin.config.set('name', 'My Admin Page');
+Admin.config.get('name'); // "My Admin Page"
+```
+
+Config can be accessed in Blaze templates through `Admin.config` helper, e.g:
+
+```html
+<h1>
+  {{Admin.config.get 'name'}}
+</h1>
+```
+
+### Available options ###
+
+- **name** - *string*
+
+  Name of admin dashboard. Will be displayed in the navbar. Defaults to `Admin`.
+
+- **layoutTemplate** - *string*
+
+  Name of the layout template. Defaults to `mfAdminLayout`.
+
 ## Sidebar and navbar menus ##
 
 Sidebar and navbar menus are designed to work well with your app as well as with other packages. For example `admin-analytics` package may add `Analytics` link to the sidebar:
