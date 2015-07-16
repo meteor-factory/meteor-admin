@@ -1,5 +1,5 @@
 Admin.navbar.set('Home', {
-  path: '/'
+  url: '/'
 });
 
 Admin.sidebar.set('Dashboard', {
