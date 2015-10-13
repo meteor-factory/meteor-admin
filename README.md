@@ -32,6 +32,16 @@ Config can be accessed in Blaze templates through `Admin.config` helper, e.g:
 
   Name of the layout template. Defaults to `mfAdminLayout`.
 
+## Admin permissions ##
+
+All admin routes and publications check if logged user has admin permissions with `Admin.isAdmin` function. By any user with `admin` role (see [alanning:roles](https://github.com/alanning/meteor-roles) package) has admin permissions. You can overwrite this function e.g:
+
+```javascript
+Admin.isAdmin = function (userId) {
+  return userId === SUPERUSERID;
+};
+```
+
 ## Sidebar and navbar menus ##
 
 Sidebar and navbar menus are designed to work well with your app as well as with other packages. For example `admin-analytics` package may add `Analytics` link to the sidebar:
