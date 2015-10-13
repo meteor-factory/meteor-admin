@@ -124,3 +124,91 @@ or
  - **template** - *string*
 
    Name of the template to be used instead of default one. For example you can use custom template to add a badge with a number of posts.
+
+## Collections ##
+
+Admin allows you to easily add CRUD views for your collections to the dashboard. Collection must have defined schema with `aldeed:simple-schema` package.
+
+### CRUD views ###
+
+There are 3 views that will be generated:
+
+- **View all documents**
+
+  Displays table with all documents in the collection. Uses using `aldeed:tabular package`.
+
+- **Edit document**
+
+  Displays an update form. Uses `aldeed:autoform` package.
+
+- **New document**
+
+  Displays an insert form. Uses `aldeed:autoform` package.
+
+- **Delete document**
+
+  Displays confirmation modal when delete button is clicked.
+
+### Adding a collection ###
+
+`Admin.collections.add(name, options)`
+
+Assume we have this collection of posts:
+
+```javascript
+Posts = new Mongo.Collection('posts');
+
+Posts.attachSchema(
+  new SimpleSchema({
+    title: {
+      type: String,
+      max: 80
+    },
+
+    content: {
+      type: String,
+      autoform: {
+        afFieldInput: {
+          type: 'textarea',
+          rows: 4
+        }
+      }
+    },
+
+    owner: {
+      type: String,
+      regEx: SimpleSchema.RegEx.Id
+    }
+  })
+);
+```
+
+Next we can add this collection to our dashboard like this:
+
+```javascript
+Admin.collections.add('Posts');
+```
+
+You should notice new sidebar item: **Posts** with **New** and **View all** subitems.
+
+### Available options ###
+
+- **collection** - *string*
+
+  Name of collection object defined in global namespace. Can contain dots (e.g. `"MyCollections.Posts"`). Defaults to `name` argument of `Admin.collections.add`.
+
+- **columns** - *array*
+
+  Custom columns to be displayed in table view. See [aldeed:tabular](https://github.com/aldeed/meteor-tabular) docs to learn how to define them.
+
+- **icon** - *string*
+
+  Name of fontawesome icon (without `fa-` prefix) to be displayed in the sidebar.
+
+- **extraFields** - *array*
+
+  Will be passed to `Tabular.Table` constructor options. See [aldeed:tabular](https://github.com/aldeed/meteor-tabular) docs for more info.
+
+- **changeSelector** - *function*
+
+  Will be passed to `Tabular.Table` constructor options. See [aldeed:tabular](https://github.com/aldeed/meteor-tabular) docs for more info.
