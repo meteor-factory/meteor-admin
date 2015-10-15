@@ -24,8 +24,8 @@ Package.onUse(function(api) {
   api.use([
     'iron:router@1.0.7',
     'accounts-ui',
-    'useraccounts:core',
-    'useraccounts:bootstrap'
+    'useraccounts:core@1.11.1',
+    'useraccounts:bootstrap@1.11.1'
   ], { weak: true });
 
   api.addFiles([
