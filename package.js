@@ -1,6 +1,6 @@
 Package.describe({
   name: 'mfactory:admin',
-  version: '0.0.1',
+  version: '0.0.2',
   summary: 'A complete admin dashboard solution',
   git: 'https://github.com/meteor-factory/meteor-admin.git',
   documentation: 'README.md'
@@ -23,6 +23,8 @@ Package.onUse(function(api) {
 
   api.use([
     'iron:router@1.0.7',
+    'kadira:flow-router@2.10.0',
+    'kadira:blaze-layout',
     'accounts-ui',
     'useraccounts:core@1.11.1',
     'useraccounts:bootstrap@1.11.1'

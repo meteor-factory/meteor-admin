@@ -7,10 +7,10 @@
     {{> mfAdminSidebar}}
     <div class="content-wrapper">
       <div class="content-header">
-        {{> Template.dynamic template=contentHeader data=this}}
+        {{> Template.dynamic template=contentHeader}}
       </div>
       <div class="content" style="min-height: {{minHeight}}">
-        {{> Template.dynamic template=content}}
+        {{> Template.dynamic template=content data=contentData}}
       </div>
     </div>
   {{/AdminLTE}}

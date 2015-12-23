@@ -32,5 +32,11 @@ Template.mfAdminLayout.helpers({
 
   minHeight: function () {
     return Template.instance().minHeight.get() + 'px';
+  },
+
+  contentData: function () {
+    var routeOptions = Admin._currentRouteOptions();
+    return routeOptions && routeOptions.data &&
+      routeOptions.data(Admin._routeParams());
   }
 });
