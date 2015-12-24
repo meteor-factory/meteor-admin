@@ -24,7 +24,7 @@ Package.onUse(function(api) {
   api.use([
     'iron:router@1.0.7',
     'kadira:flow-router@2.10.0',
-    'kadira:blaze-layout',
+    'kadira:blaze-layout@2.3.0',
     'accounts-ui',
     'useraccounts:core@1.11.1',
     'useraccounts:bootstrap@1.11.1'
